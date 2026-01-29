@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+joblib
+sqlalchemy
+psycopg2-binary
+flask
+streamlit
+requests
+fsspec

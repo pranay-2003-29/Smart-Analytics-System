@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+      - "8501:8501"
+    command: >
+      bash -c "
+      python etl/extract.py &&
+      python etl/transform.py &&
+      python etl/load.py &&
+      python ml/train_model.py &&
+      python api/app.py &
+      streamlit run dashboard/app.py
+      "
